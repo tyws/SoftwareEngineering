@@ -1,0 +1,67 @@
+<html>
+<head>
+{% load staticfiles %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学生注册</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-theme.css' %}">
+    <script type="text/javascript" src={% static "jquery.min.js" %}></script>
+    <script type="text/javascript" src={% static "bootstrap.min.js" %}></script>
+    <!--alt-->
+    <link href="{% static 'signin.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="signin">
+		<form class='form-signin'method="post">
+			{% csrf_token %}
+            <h2 class="form-signin-heading">学生注册</h2>
+            <div>
+                <label class="sr-only" for="inputEmail">学号</label>
+                学号
+                <div class="form-control">
+                    {{ rf.username }}
+                </div>
+            </div>
+
+            <div>
+                <label class="sr-only" for="inputEmail">Email</label>
+                Email
+                <div class="form-control">
+                    {{ rf.email }}
+                </div>
+            </div>
+
+            <div>
+                <label class="sr-only" for="inputEmail">密码</label>
+                密码
+                <div class="form-control">
+                    {{ rf.password }}
+                </div>
+            </div>
+
+            <div>
+                <label class="sr-only" for="inputEmail">确认密码</label>
+                确认密码
+                <div class="form-control">
+                    {{ rf.check }}
+                </div>
+            </div>
+
+            <div>
+                <div class="controls">
+                    <button type="submit" class="btn btn-lg btn-primary" name="register">注册</button>
+                    <button type="submit" class="btn btn-lg btn-primary" name="back">返回</button>
+
+                </div>
+            </div>
+        </form>
+
+
+	</div>
+</div>
+</body>
+
+</html>
